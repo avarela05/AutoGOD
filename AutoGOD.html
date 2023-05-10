@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página web</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="pagina.js"></script>
+</head>
+<body>
+	<header>
+		<nav>
+			<ul>
+				<li><a href="#estadisticas">Estadísticas</a></li>
+				<li><a href="#administracion">Administración</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="estadisticas">
+			<h1>Estadísticas de servidores virtuales</h1>
+			<table id="tabla-servidores">
+				<thead>
+					<tr>
+						<th data-columna="1" data-orden="asc">Nombre</th>
+						<th data-columna="2" data-orden="asc">CPU</th>
+						<th data-columna="3" data-orden="asc">Memoria</th>
+						<th data-columna="4" data-orden="asc">Espacio en disco</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Servidor 1</td>
+						<td>10%</td>
+						<td>25%</td>
+						<td>50%</td>
+					</tr>
+					<tr>
+						<td>Servidor 2</td>
+						<td>20%</td>
+						<td>30%</td>
+						<td>75%</td>
+					</tr>
+					<tr>
+						<td>Servidor 3</td>
+						<td>5%</td>
+						<td>10%</td>
+						<td>25%</td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+		<section id="administracion">
+			<h1>Administración de servidores virtuales</h1>
+			<form id="admin">
+				<select id="vm-select" onchange="redirect()">
+					<option value="">Seleccionar Máquina Virtual</option>
+					<option value="UBUNTU_SERVER_SINTESIS.html">UBUNTU SERVER SINTESIS</option>
+					<option value="UBUNTU_DESKTOP_SINTESIS.html">UBUNTU DESKTOP SINTESIS</option>
+				  </select>								  
+				<label for="action">Seleccionar acción:</label>
+        <button onclick="iniciarMaquina()">Iniciar</button>
+				<button onclick="stopMachine('mi_maquina_virtual')">Detener</button>
+				<button onclick="configureMachine('mi_maquina_virtual')">Configurar</button>
+				<button type="submit">Enviar</button>
+			</form>
+		</section>
+	</main>
+	
